@@ -1,7 +1,7 @@
 <?php 
-use  BlockMod\Entity\ChatsTable;
+use  BlockMod\Entity\UsersTable;
 use  Bitrix\Main\Loader;
-class Chats extends \CBitrixComponent
+class b_users extends \CBitrixComponent
 {
     
     public function executeComponent()
@@ -10,13 +10,13 @@ class Chats extends \CBitrixComponent
          $post = (array) $this->request->getPostList()->toArray();
 
         Loader::includeModule('block.mod');
-        $chat = ChatsTable::getList(array(
-                        'select' => array('UF_USER1','UF_USER2') , 
-                        'filter' => ['UF_USER1'=>$post["name"]],
+        $user = UsersTable::getList(array(
+                        'select' => array('UF_USERNAME') , 
+                        'filter' => ['ID'=>$post["ID"]],
               ))->fetchAll();
-              if(empty($chat))
+              if(empty($user))
               header('HTTP/1.1 204 No Content');
           header('Content-Type: application/json; charset=utf-8');
-          echo json_encode($chat);
+          echo json_encode($user);
     }
 }

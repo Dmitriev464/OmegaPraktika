@@ -41,5 +41,5 @@
 //     }
 //  }
 include($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
- $APPLICATION->includeComponent("api:component","");
+ $APPLICATION->includeComponent("api:Chat","");
 ?>

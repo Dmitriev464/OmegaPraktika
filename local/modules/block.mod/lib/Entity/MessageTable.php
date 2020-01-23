@@ -5,13 +5,16 @@ use Bitrix\Main\Entity\DataManager;
 use Bitrix\Main\Entity\IntegerField;
 use Bitrix\Main\Entity\StringField;
 use Bitrix\Main\Entity\ReferenceField;
+use Bitrix\Main\Entity\DateField;
+use Bitrix\Main\Type\DateTime;
 class MessageTable extends DataManager
 {
     public static function getTableName()
         {
-            return 'b_chats';
+            return 'b_message';
         }
 
+      
     public static function getMap()
         {
             return [
@@ -23,25 +26,27 @@ class MessageTable extends DataManager
                         'column_name'  => 'ID'
                     ]
             ),
-        
-                new TimeField(
-                    'UF_TIME',
-                    [
-                        'required'    => true,
-                        'column_name' => 'UF_TIME',
-                        'title'       => 'Время сообщения'
-                    ]
-                    ),
             
-                new StringField(
-                    'UF_TEXT',
-                    [
-                        'required'    => true,
-                        'column_name' => 'UF_TEXT',
-                        'title'       => 'Сообщение'
-                    ]
+            new DateField(
+               'UF_TIME',
+            [
+                'required'    => true,
+                'column_name' => 'UF_TIME',
+                'title'       => 'ДАТА'
+            ]
+                
+            ),
 
-                ),
+            new StringField(
+                'UF_TEXT',
+            [
+                'required'    => true,
+                'column_name' => 'UF_TEXT',
+                'title'       => 'сообщение'
+            ]
+                
+            ),
+               
                 new IntegerField(
                     'UF_USERID',
                     [
@@ -60,7 +65,7 @@ class MessageTable extends DataManager
                     'b_users',
                     'BlockMod\Entity\UsersTable',
                     [
-                        'this.UF_USERNAME' => 'ref.ID'
+                        'this.UF_USERID' => 'ref.ID'
                     ]
                 ),
                 new ReferenceField(

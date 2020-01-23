@@ -15,6 +15,6 @@ use Bitrix\Main\Loader;
 Loader::registerAutoLoadClasses('block.mod', [
     'BlockMod\Entity\UsersTable' => 'lib/Entity/UsersTable.php',
      'BlockMod\Entity\ChatsTable' => 'lib/Entity/ChatsTable.php',
-    'BlockMod\Entity\ObjectTable' => 'lib/Entity/ObjectTable.php'
+    'BlockMod\Entity\MessageTable' => 'lib/Entity/MessageTable.php'
 ]); 
 ?>

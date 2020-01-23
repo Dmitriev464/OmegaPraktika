@@ -35,7 +35,7 @@ class b_chats extends \CBitrixComponent
         Loader::includeModule('block.mod');
         $chat = ChatsTable::getList(array(
                         'select' => array('UF_USER1','UF_USER2') , 
-                        'filter' => ['UF_USER1'=>$post["name"]],
+                        'filter' => ['ID'=>$post["ID"]],
               ))->fetchAll();
               if(empty($chat))
               header('HTTP/1.1 204 No Content');
