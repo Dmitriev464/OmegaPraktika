@@ -11,8 +11,8 @@ class b_users extends \CBitrixComponent
 
         Loader::includeModule('block.mod');
         $user = UsersTable::getList(array(
-                        'select' => array('UF_USERNAME') , 
-                        'filter' => ['ID'=>$post["ID"]],
+                        'select' => array('ID','UF_USERNAME') 
+                      
               ))->fetchAll();
               if(empty($user))
               header('HTTP/1.1 204 No Content');

@@ -25,7 +25,7 @@ class ChatsTable extends DataManager
             ),
         
             
-                new StringField(
+                new  IntegerField(
                     'UF_USER1',
                     [
                         'required'    => true,
@@ -35,7 +35,7 @@ class ChatsTable extends DataManager
 
                 ),
               
-                new StringField(
+                new IntegerField(
                     'UF_USER2',
                     [
                         'required'    => true,
@@ -45,10 +45,16 @@ class ChatsTable extends DataManager
 
                 ),
                 new ReferenceField(
-                    'b_users',
+                    'b_users1',
                     'BlockMod\Entity\UsersTable',
                     [
-                        'this.UF_USER1' => 'ref.ID',
+                        'this.UF_USER1' => 'ref.ID'
+                    ]
+                ),
+                new ReferenceField(
+                    'b_users2',
+                    'BlockMod\Entity\UsersTable',
+                    [
                         'this.UF_USER2' => 'ref.ID'
                     ]
                 ),
