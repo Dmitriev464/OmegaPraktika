@@ -18,7 +18,8 @@ Loader::registerAutoLoadClasses('block.mod', [
     'BlockMod\Entity\MessageTable' => 'lib/Entity/MessageTable.php',
     'BlockMod\Services\MessageAdd' => 'lib/Services/MessageAdd.php',
     'BlockMod\Services\MessageDel' => 'lib/Services/MessageDel.php',
-    'BlockMod\Services\MessageSel' => 'lib/Services/MessageSel.php'
+    'BlockMod\Services\MessageSel' => 'lib/Services/MessageSel.php',
+    'BlockMod\Services\MessageSel2' => 'lib/Services/MessageSel2.php'
 
 ]); 
 ?>
